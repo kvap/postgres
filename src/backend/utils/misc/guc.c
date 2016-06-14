@@ -1662,6 +1662,16 @@ static struct config_bool ConfigureNamesBool[] =
 		NULL, NULL, NULL
 	},
 
+	{
+		{"mute_connection", PGC_SIGHUP, LOGGING_WHERE,
+			gettext_noop("Do not reply anything to the client"),
+			NULL
+		},
+		&mute_connection,
+		false,
+		NULL, NULL, NULL
+	},
+
 	/* End-of-list marker */
 	{
 		{NULL, 0, 0, NULL, NULL}, NULL, false, NULL, NULL, NULL

@@ -84,6 +84,7 @@ const char *debug_query_string; /* client-supplied query string */
 
 /* Note: whereToSendOutput is initialized for the bootstrap/standalone case */
 CommandDest whereToSendOutput = DestDebug;
+bool mute_connection = false;
 
 /* flag for logging end of session */
 bool		Log_disconnections = false;

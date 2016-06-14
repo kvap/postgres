@@ -272,6 +272,8 @@ extern int	tcp_keepalives_count;
 extern bool trace_sort;
 #endif
 
+extern bool mute_connection;
+
 /*
  * Functions exported by guc.c
  */
