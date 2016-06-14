@@ -1517,6 +1517,8 @@ socket_is_send_pending(void)
 static int
 socket_putmessage(char msgtype, const char *s, size_t len)
 {
+	if (mute_connection)
+		return 0;
 	if (DoingCopyOut || PqCommBusy)
 		return 0;
 	PqCommBusy = true;

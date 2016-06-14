@@ -4048,8 +4048,7 @@ BackendInitialize(Port *port)
 	 * Must do this now because authentication uses libpq to send messages.
 	 */
 	pq_init();					/* initialize libpq to talk to client */
-	if (!mute_connection)
-		whereToSendOutput = DestRemote;		/* now safe to ereport to client */
+	whereToSendOutput = DestRemote;		/* now safe to ereport to client */
 
 	/*
 	 * We arrange for a simple exit(1) if we receive SIGTERM or SIGQUIT or

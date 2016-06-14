@@ -57,8 +57,7 @@ pq_redirect_to_shm_mq(dsm_segment *seg, shm_mq_handle *mqh)
 	PqCommMethods = &PqCommMqMethods;
 	pq_mq = shm_mq_get_queue(mqh);
 	pq_mq_handle = mqh;
-	if (!mute_connection)
-		whereToSendOutput = DestRemote;
+	whereToSendOutput = DestRemote;
 	FrontendProtocol = PG_PROTOCOL_LATEST;
 	on_dsm_detach(seg, pq_cleanup_redirect_to_shm_mq, (Datum) 0);
 }
